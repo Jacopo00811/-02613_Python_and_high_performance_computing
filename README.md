@@ -1,2 +1,2 @@
-# -02613_Python_and_high_performance_computing
-02613 Python and high-performance computing Spring 25 DTU
+# Python and high performance computing - Exercises
+This repository contains the exercises for the class Python and high performance computing. It includes solutions to various exercises covered in the course.
