@@ -1,0 +1,69 @@
+Time taken: 0.0018491840455681086 seconds for size 10
+Time taken: 0.0018879680428653955 seconds for size 24
+Time taken: 0.0018962370231747627 seconds for size 59
+Time taken: 0.0019828579388558865 seconds for size 146
+Time taken: 0.0020216810517013073 seconds for size 359
+Time taken: 0.002245762152597308 seconds for size 879
+Time taken: 0.0026238891296088696 seconds for size 2154
+Time taken: 0.0033588057849556208 seconds for size 5274
+Time taken: 0.005138719920068979 seconds for size 12915
+Time taken: 0.010974576929584146 seconds for size 31622
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24141424: <Performance_Comparison> in cluster <dcc> Done
+
+Job <Performance_Comparison> was submitted from host <n-62-27-21> by user <s215158> in cluster <dcc> at Wed Feb 19 10:37:45 2025
+Job was executed on host(s) <n-62-31-24>, in queue <hpc>, as user <s215158> in cluster <dcc> at Wed Feb 19 10:37:46 2025
+</zhome/f9/0/168881> was used as the home directory.
+</zhome/f9/0/168881/Desktop/PyHPC/Week_3/Exercise_3> was used as the working directory.
+Started at Wed Feb 19 10:37:46 2025
+Terminated at Wed Feb 19 10:37:59 2025
+Results reported at Wed Feb 19 10:37:59 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J Performance_Comparison
+#BSUB -q hpc
+#BSUB -W 2
+#BSUB -R "rusage[mem=12288MB]"
+#BSUB -o Performance_Comparison_%J.out
+#BSUB -e Performance_Comparison_%J.err
+
+#BSUB -R "select[model == XeonGold6126]"
+
+#BSUB -R "span[hosts=1]"
+#BSUB -n 1
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+python code.py row
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   12.89 sec.
+    Max Memory :                                 7951 MB
+    Average Memory :                             7945.67 MB
+    Total Requested Memory :                     12288.00 MB
+    Delta Memory :                               4337.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   13 sec.
+    Turnaround time :                            14 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <Performance_Comparison_24141424.err> for stderr output of this job.
+

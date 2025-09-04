@@ -1,0 +1,17 @@
+If SIZE is 40, how many bytes does the row vector mat = np.random.rand(1, SIZE) occupy?
+    1 number in float = 8 bytes so a vector of shape 1x40 is 8*40=320 bytes
+
+If SIZE is 35, how many bytes does the row vector mat = np.random.rand(SIZE, SIZE) occupy?
+    1 number in float = 8 bytes so a matrix of shape 35x35 is 8*35*35=9800 bytes
+
+For which arrays was using blosc with compression faster than NumPy?
+    Zeros, tile
+
+Which statement below is true when it comes to using compressed data?
+    When data contains repeated parts compression is both faster and uses less space
+
+What compression ratio does blosc achieve over numpy (size of .npy file / size of .bl file) for the zero arrays using lz4?
+    100 or above
+
+What changes when using zstd instead of lz4 (for zeros and tiles data at least)?
+    Reading is the same, writing is slower, but it uses less space

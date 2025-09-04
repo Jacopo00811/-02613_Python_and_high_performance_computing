@@ -1,0 +1,61 @@
+0.005505967070348561
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24028816: <python> in cluster <dcc> Done
+
+Job <python> was submitted from host <n-62-27-21> by user <s215158> in cluster <dcc> at Wed Feb 12 11:08:11 2025
+Job was executed on host(s) <n-62-31-2>, in queue <hpc>, as user <s215158> in cluster <dcc> at Wed Feb 12 11:08:13 2025
+</zhome/f9/0/168881> was used as the home directory.
+</zhome/f9/0/168881/Desktop/PyHPC/Week_2/Exercise_15> was used as the working directory.
+Started at Wed Feb 12 11:08:13 2025
+Terminated at Wed Feb 12 11:08:14 2025
+Results reported at Wed Feb 12 11:08:14 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J python
+#BSUB -q hpc
+#BSUB -W 15
+#BSUB -R "rusage[mem=512MB]"
+#BSUB -o batch_output/python_%J.out
+#BSUB -e batch_output/python_%J.err
+#BSUB -R "span[hosts=1]"
+#BSUB -n 1
+# Initialize Python environment
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+# Run Pythonscript
+python code.py ./input.npy 10
+
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1.28 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     512.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   26 sec.
+    Turnaround time :                            3 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <batch_output/python_24028816.err> for stderr output of this job.
+
