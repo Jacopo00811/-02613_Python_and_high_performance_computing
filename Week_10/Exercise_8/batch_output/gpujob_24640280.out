@@ -1,0 +1,75 @@
+Loading data from /dtu/projects/02613_2025/data/locations/locations_5000.csv...
+Loaded 4999 locations
+
+Running distance_matrix_oneloop...
+Distance matrix shape: (4999, 4999)
+Time taken: 4.7029 seconds
+
+Running distance_matrix_noloop...
+Distance matrix shape: (4999, 4999)
+Time taken: 1.2859 seconds
+
+Comparison:
+Oneloop time: 4.7029 seconds
+Noloop time: 1.2859 seconds
+Speedup: 3.66x
+Maximum difference between results: 0.00000000
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24640280: <cupy> in cluster <dcc> Done
+
+Job <cupy> was submitted from host <hpclogin1> by user <s215158> in cluster <dcc> at Fri Apr 11 10:53:49 2025
+Job was executed on host(s) <4*n-62-12-22>, in queue <c02613>, as user <s215158> in cluster <dcc> at Fri Apr 11 10:53:51 2025
+</zhome/f9/0/168881> was used as the home directory.
+</zhome/f9/0/168881/Desktop/PyHPC/Week_10/Exercise_8> was used as the working directory.
+Started at Fri Apr 11 10:53:51 2025
+Terminated at Fri Apr 11 10:54:03 2025
+Results reported at Fri Apr 11 10:54:03 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -q c02613
+#BSUB -J cupy
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+#BSUB -R "rusage[mem=1GB]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -W 00:05
+#BSUB -o batch_output/gpujob_%J.out
+#BSUB -e batch_output/gpujob_%J.err
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+time python points.py /dtu/projects/02613_2025/data/locations/locations_5000.csv
+# nsys profile -o oneloop_profile python points.py /dtu/projects/02613_2025/data/locations/locations_5000.csv
+# nsys profile -o noloop_profile python points.py /dtu/projects/02613_2025/data/locations/locations_5000.csv
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   8.52 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     4096.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   120 sec.
+    Turnaround time :                            14 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <batch_output/gpujob_24640280.err> for stderr output of this job.
+

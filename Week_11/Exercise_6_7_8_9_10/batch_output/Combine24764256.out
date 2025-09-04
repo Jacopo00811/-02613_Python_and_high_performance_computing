@@ -1,0 +1,57 @@
+Combined 203 histograms and saved plot as combined_histogram.png
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24764256: <Combine> in cluster <dcc> Done
+
+Job <Combine> was submitted from host <hpclogin1> by user <s215158> in cluster <dcc> at Wed Apr 23 12:24:10 2025
+Job was executed on host(s) <n-62-31-2>, in queue <hpc>, as user <s215158> in cluster <dcc> at Wed Apr 23 12:24:12 2025
+</zhome/f9/0/168881> was used as the home directory.
+</zhome/f9/0/168881/Desktop/PyHPC/Week_11/Exercise_6_7_8_9_10> was used as the working directory.
+Started at Wed Apr 23 12:24:12 2025
+Terminated at Wed Apr 23 12:24:19 2025
+Results reported at Wed Apr 23 12:24:19 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -q hpc
+#BSUB -J Combine
+#BSUB -n 1
+#BSUB -R "span[hosts=1]"
+#BSUB -R "rusage[mem=1GB]"
+#BSUB -W 00:10
+#BSUB -o batch_output/Combine%J.out
+#BSUB -e batch_output/Combine%J.err
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+python combine.py
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   5.17 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   72 sec.
+    Turnaround time :                            9 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <batch_output/Combine24764256.err> for stderr output of this job.
+
