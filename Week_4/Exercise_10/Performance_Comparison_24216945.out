@@ -1,0 +1,63 @@
+{'mean': 8228.799783795765, 'std': 4392.798475994285, 'max': 20006.822918355236, 'min': 0.0}
+Wrote profile results to code.py.lprof
+Inspect results with:
+python -m line_profiler -rmt "code.py.lprof"
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24216945: <Haversine> in cluster <dcc> Done
+
+Job <Haversine> was submitted from host <n-62-27-22> by user <s215158> in cluster <dcc> at Wed Feb 26 13:49:23 2025
+Job was executed on host(s) <n-62-31-24>, in queue <hpc>, as user <s215158> in cluster <dcc> at Wed Feb 26 13:49:25 2025
+</zhome/f9/0/168881> was used as the home directory.
+</zhome/f9/0/168881/Desktop/PyHPC/Week_4/Exercise_10> was used as the working directory.
+Started at Wed Feb 26 13:49:25 2025
+Terminated at Wed Feb 26 13:49:29 2025
+Results reported at Wed Feb 26 13:49:29 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J Haversine
+#BSUB -q hpc
+#BSUB -W 10
+#BSUB -R "rusage[mem=2048MB]"
+#BSUB -o Performance_Comparison_%J.out
+#BSUB -e Performance_Comparison_%J.err
+
+#BSUB -R "select[model == XeonGold6126]"
+
+#BSUB -R "span[hosts=1]"
+#BSUB -n 1
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+kernprof -l code.py /dtu/projects/02613_2025/data/locations/locations_5000.csv
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3.60 sec.
+    Max Memory :                                 2 MB
+    Average Memory :                             1.67 MB
+    Total Requested Memory :                     2048.00 MB
+    Delta Memory :                               2046.00 MB
+    Max Swap :                                   -
+    Max Processes :                              1
+    Max Threads :                                1
+    Run time :                                   110 sec.
+    Turnaround time :                            6 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <Performance_Comparison_24216945.err> for stderr output of this job.
+

@@ -1,0 +1,5 @@
+What do you observe? What are pros and cons of pool.map()?
+    The times are basically the same. Pool.map() is a blocking function while pool.apply.async() is not and returns a async obj (on which
+    you have to call .get()).
+
+Source: https://stackoverflow.com/questions/8533318/multiprocessing-pool-when-to-use-apply-apply-async-or-map

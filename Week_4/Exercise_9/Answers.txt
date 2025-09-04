@@ -1,0 +1,3 @@
+ Did it make the code faster? Did it change where time is spent in distance_matrix?
+    Yes it made it almost twice as fast. Now the most of the time is spend on "cosprod" (49.8%)
+

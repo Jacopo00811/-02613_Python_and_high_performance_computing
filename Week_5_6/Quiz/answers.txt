@@ -1,0 +1,8 @@
+1) What did you observe in your speedup plot before adding numactl --interleave=all?
+    Speedup improves until 50% of all threads are added but then decreases.
+
+2) What changed after adding numactl --interleave=all?
+    Speedup now increases with every core added.
+
+3) What is the effetct of numactl --interleave=all?
+    It ensures memory allocation is spread to both CPU sockets.

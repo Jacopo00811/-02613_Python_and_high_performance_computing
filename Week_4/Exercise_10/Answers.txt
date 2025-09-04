@@ -1,0 +1,2 @@
+What happened? Did it get faster?
+    No it did not but now all the computations time is moved to the actual formula.

@@ -1,0 +1,18 @@
+Suppose that a specific task consists of two subtasks. The first subtask retrieves data from a file; 
+it takes 20 seconds to execute on a given system, and it cannot be parallelized. The second subtask processes 
+a large number of data records; it takes 100 seconds to execute sequentially. Each data record can be processed 
+independently, so the second subtask is easily parallelized.
+
+1) What is the parallel fraction of the task consisting of the two subtasks?
+    The parallel fraction is 100/120 = 0.83 (F).
+
+2) What is the theoretical speedup for p = 10 processors?
+    S = 1/((1-F) + F/p) = 1/((1-0.83) + 0.83/10) = 3.95 = 4.0
+
+3) What is the theoretical maximum speedup?
+    S(inf) = 1/(1-F) = 5.88 = 6.0
+
+4) Imagine we currently have 4 processors available for parallization. To improve performance, we have two options:
+    - Optimize the first subtask so we can retrieve the data from the file in 5 seconds instead of 20.
+    - Purchase more processors so we have 8 processors available instead of 4.
+    Optimize task one

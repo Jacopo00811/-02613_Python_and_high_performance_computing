@@ -1,0 +1,83 @@
+n_proc: 1, time: 0.6304 seconds
+n_proc: 2, time: 0.3312 seconds
+n_proc: 3, time: 0.2382 seconds
+n_proc: 4, time: 0.2153 seconds
+n_proc: 5, time: 0.1804 seconds
+n_proc: 6, time: 0.1580 seconds
+n_proc: 7, time: 0.1383 seconds
+n_proc: 8, time: 0.1198 seconds
+n_proc: 9, time: 0.1136 seconds
+n_proc: 10, time: 0.1159 seconds
+n_proc: 11, time: 0.1240 seconds
+n_proc: 12, time: 0.1203 seconds
+n_proc: 13, time: 0.1235 seconds
+n_proc: 14, time: 0.1357 seconds
+n_proc: 15, time: 0.1278 seconds
+n_proc: 16, time: 0.1272 seconds
+n_proc: 17, time: 0.1240 seconds
+n_proc: 18, time: 0.1252 seconds
+n_proc: 19, time: 0.1378 seconds
+n_proc: 20, time: 0.1445 seconds
+n_proc: 21, time: 0.1563 seconds
+n_proc: 22, time: 0.1468 seconds
+n_proc: 23, time: 0.1493 seconds
+n_proc: 24, time: 0.1474 seconds
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24284036: <Pi> in cluster <dcc> Done
+
+Job <Pi> was submitted from host <n-62-30-8> by user <s215158> in cluster <dcc> at Wed Mar  5 10:50:11 2025
+Job was executed on host(s) <10*n-62-31-15>, in queue <hpc>, as user <s215158> in cluster <dcc> at Wed Mar  5 10:50:12 2025
+</zhome/f9/0/168881> was used as the home directory.
+</zhome/f9/0/168881/Desktop/PyHPC/Week_5_6/Exercise_5> was used as the working directory.
+Started at Wed Mar  5 10:50:12 2025
+Terminated at Wed Mar  5 10:50:19 2025
+Results reported at Wed Mar  5 10:50:19 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J Pi
+#BSUB -q hpc
+#BSUB -W 10
+#BSUB -R "rusage[mem=2048MB]"
+#BSUB -o Pi_%J.out
+#BSUB -e Pi_%J.err
+
+#BSUB -R "select[model == XeonGold6126]"
+
+#BSUB -R "span[hosts=1]"
+#BSUB -n 10
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+python code.py
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   21.10 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     20480.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   9 sec.
+    Turnaround time :                            8 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <Pi_24284036.err> for stderr output of this job.
+

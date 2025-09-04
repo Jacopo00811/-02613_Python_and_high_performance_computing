@@ -1,0 +1,2 @@
+Rerun the profiler. What has changed? Did it get faster? How much / little?
+    It is faster by 2 orders of magnitude.

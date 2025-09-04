@@ -1,0 +1,8 @@
+Which function uses the most cumulative time?
+     1    0.084    0.084    0.084    0.084 code.py:4(distance_matrix)
+
+What percentage of the total program run time does the slowest function occupy?
+    Take the cum time, multiply by 100 and divide by the total run time.
+    
+Based on the profiling results, where should we focus our optimization efforts?
+    Only the slowest function.

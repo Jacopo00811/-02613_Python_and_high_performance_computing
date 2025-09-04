@@ -1,0 +1,9 @@
+1) What implementation was the fastest?
+    The chuck parallel.
+
+2) What implementation was the slowest?
+    The fully parallel.
+
+3) Looking at the time output for the fastest parallel implementation, which of the following are true as more cores are added?
+    The real times goes down. 
+    The user time remains mostly unchange or increases.
