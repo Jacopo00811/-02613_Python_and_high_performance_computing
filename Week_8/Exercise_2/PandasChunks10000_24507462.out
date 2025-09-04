@@ -1,0 +1,61 @@
+12548.629999999994
+mem=139012 KB runtime=17.98 s
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24507462: <PandasChunks10000> in cluster <dcc> Done
+
+Job <PandasChunks10000> was submitted from host <n-62-30-3> by user <s215158> in cluster <dcc> at Wed Mar 26 10:16:50 2025
+Job was executed on host(s) <n-62-31-3>, in queue <hpc>, as user <s215158> in cluster <dcc> at Wed Mar 26 10:16:51 2025
+</zhome/f9/0/168881> was used as the home directory.
+</zhome/f9/0/168881/Desktop/PyHPC/Week_8/Exercise_2> was used as the working directory.
+Started at Wed Mar 26 10:16:51 2025
+Terminated at Wed Mar 26 10:17:11 2025
+Results reported at Wed Mar 26 10:17:11 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J PandasChunks10000
+#BSUB -q hpc
+#BSUB -W 10
+#BSUB -R "rusage[mem=2048MB]"
+#BSUB -o PandasChunks10000_%J.out
+#BSUB -e PandasChunks10000_%J.err
+
+#BSUB -R "select[model == XeonGold6126]"
+
+#BSUB -R "span[hosts=1]"
+#BSUB -n 1
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+/usr/bin/time -f"mem=%M KB runtime=%e s" 2>&1 python code.py /dtu/projects/02613_2025/data/dmi/2023_01.csv.zip 10000
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   18.43 sec.
+    Max Memory :                                 80 MB
+    Average Memory :                             80.00 MB
+    Total Requested Memory :                     2048.00 MB
+    Delta Memory :                               1968.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                7
+    Run time :                                   29 sec.
+    Turnaround time :                            21 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <PandasChunks10000_24507462.err> for stderr output of this job.
+

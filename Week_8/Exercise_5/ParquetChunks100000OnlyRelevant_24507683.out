@@ -1,0 +1,61 @@
+12548.629999999997
+mem=147068 KB runtime=2.70 s
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24507683: <ParquetChunks100000OnlyRelevant> in cluster <dcc> Done
+
+Job <ParquetChunks100000OnlyRelevant> was submitted from host <n-62-30-3> by user <s215158> in cluster <dcc> at Wed Mar 26 10:38:26 2025
+Job was executed on host(s) <n-62-31-4>, in queue <hpc>, as user <s215158> in cluster <dcc> at Wed Mar 26 10:38:27 2025
+</zhome/f9/0/168881> was used as the home directory.
+</zhome/f9/0/168881/Desktop/PyHPC/Week_8/Exercise_5> was used as the working directory.
+Started at Wed Mar 26 10:38:27 2025
+Terminated at Wed Mar 26 10:38:32 2025
+Results reported at Wed Mar 26 10:38:32 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J ParquetChunks100000OnlyRelevant
+#BSUB -q hpc
+#BSUB -W 10
+#BSUB -R "rusage[mem=2048MB]"
+#BSUB -o ParquetChunks100000OnlyRelevant_%J.out
+#BSUB -e ParquetChunks100000OnlyRelevant_%J.err
+
+#BSUB -R "select[model == XeonGold6126]"
+
+#BSUB -R "span[hosts=1]"
+#BSUB -n 1
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+/usr/bin/time -f"mem=%M KB runtime=%e s" 2>&1 python code.py /zhome/f9/0/168881/Desktop/PyHPC/Week_8/Exercise_3/output.parquet
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3.10 sec.
+    Max Memory :                                 1 MB
+    Average Memory :                             1.00 MB
+    Total Requested Memory :                     2048.00 MB
+    Delta Memory :                               2047.00 MB
+    Max Swap :                                   -
+    Max Processes :                              1
+    Max Threads :                                1
+    Run time :                                   36 sec.
+    Turnaround time :                            6 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <ParquetChunks100000OnlyRelevant_24507683.err> for stderr output of this job.
+
